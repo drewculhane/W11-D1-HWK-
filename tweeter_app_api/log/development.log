@@ -47,3 +47,22 @@ Processing by TweetsController#show as HTML
 Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 721)
 
 
+Started POST "/tweets" for ::1 at 2020-08-03 21:46:18 -0400
+Processing by TweetsController#create as */*
+  Parameters: {"tweet"=>{"title"=>"Why Armenians rock ", "content"=>"We rock because our rice pilaf is awesome. ", "author"=>"Andrew Kazanjian "}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/tweets_controller.rb:12:in `create'
+  [1m[36mTweet Create (1.4ms)[0m  [1m[32mINSERT INTO "tweets" ("title", "content", "author") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "Why Armenians rock "], ["content", "We rock because our rice pilaf is awesome. "], ["author", "Andrew Kazanjian "]]
+  ↳ app/controllers/tweets_controller.rb:12:in `create'
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/tweets_controller.rb:12:in `create'
+Completed 201 Created in 12ms (Views: 0.2ms | ActiveRecord: 2.7ms | Allocations: 4846)
+
+
+Started GET "/tweets/" for ::1 at 2020-08-03 21:46:41 -0400
+Processing by TweetsController#index as HTML
+  [1m[36mTweet Load (0.6ms)[0m  [1m[34mSELECT "tweets".* FROM "tweets"[0m
+  ↳ app/controllers/tweets_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 1.6ms | ActiveRecord: 0.6ms | Allocations: 1163)
+
+
